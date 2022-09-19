@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- normalize all elements style -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- font awesome library -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- main style sheet -->
+    <link rel="stylesheet" href="css/master.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- head title -->
+    <title>Rock|Paper|Scissors</title>
+</head>
+<body>
+    <!-- start header -->
+    <header>
+        <div class="container">
+            <p>Rock<br/>Paper<br/>Scissors</p>
+            <div>
+                <p>Score</p>
+                <span>0</span>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+
+    <!-- start game -->
+    <div class="game">
+        <div class="container">
+            <div class="poly"></div>
+            <div class="shape hand">
+                <i class="fa-solid fa-hand"></i>
+            </div>
+            <div class="shape back">
+                <i class="fa-solid fa-hand-back-fist"></i>
+            </div>
+            <div class="shape sciss">
+                <i class="fa-solid fa-hand-scissors"></i>
+            </div>
+        </div>
+    </div>
+    <!-- end game -->
+
+    <!-- start result -->
+    <div class="result">
+        <div class="container">
+            <div class="user">
+                <p>you picked</p>
+            </div>
+            <div class="play">
+                <p>you lose</p>
+                <button>play again</button>
+            </div>
+            <div class="house winner">
+                <p>the house picked</p>
+                <div class="pick"></div>
+            </div>
+        </div>
+    </div>
+    <!-- end result -->
+
+    <!-- font awesome library -->
+    <script src="js/all.min.js"></script>
+    <!-- main js file -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+/* start global rules */
+*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: hsl(214deg 47% 23%);
+}
+:root{
+    --main-color:#3f51b5;
+}
+.container{
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* very small screen */
+@media (max-width:767px) {
+    .container{
+        width: 300px;
+    }
+}
+
+/* small screen */
+@media (min-width:768px) {
+    .container{
+        width: 680px;
+    }
+}
+
+/* medium screen */
+@media (min-width:992px) {
+    .container{
+        width: 870px;
+    }
+}
+
+/* large screen */
+@media (min-width:1200px) {
+    .container{
+        width: 960px;
+    }
+}
+/* end global rules */
+
+/* start header */
+header{
+    margin-top: 30px;
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: #9e9e9ea4 5px solid;
+    border-radius: 10px;
+    gap: 15px;
+}
+header .container > p{
+    color: white;
+    font-size: 30px;
+}
+header .container div{
+    background-color: #e1dede;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 20px;
+}
+header .container div p{
+    color: #e91e63;
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+header .container div span{
+    font-size: 55px;
+    color: var(--main-color);
+}
+
+/* very small screen */
+@media (max-width:767px) {
+    header .container > p{
+        font-size: 20px;
+    }
+    header .container div{
+        padding: 5px 10px;
+    }
+    header .container div span{
+        font-size: 40px;
+    }
+}
+/* end header */
+
+/* start game */
+.game{
+    transition: 0.8s;
+}
+.game .container{
+    position: relative;
+    width: 430px;
+    height: 320px;
+}
+.game .container .poly{
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    background-color: var(--main-color);
+    height: 320px;
+    width: 430px;
+    margin: 100px auto;
+}
+.game .container .poly::after{
+    content: "";
+    width: calc(100% - 80px);
+    height: calc(100% - 40px);
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    top: 16px;
+    left: 55px;
+    background-color: hsl(214deg 47% 23%);
+    position: absolute;
+}
+.game .container .shape{
+    position: absolute;
+    background-color: #fafafa;
+    border-radius: 50%;
+    padding: 35px;
+    cursor: pointer;
+    transition: 1s;
+}
+.game .container .shape:hover{
+    transform: scale(1.1);
+}
+.game .container .shape svg{
+    color: var(--main-color);
+    font-size: 70px;
+}
+.game .container .shape.hand{
+    top: -60px;
+    left: -40px;
+    border: solid #4caf50 25px;
+}
+.game .container .shape.back{
+    bottom: -53px;
+    left: 32%;
+    border: solid #f44336 25px;
+}
+.game .container .shape.sciss{
+    top: -60px;
+    right: -60px;
+    border: solid #ffc107 25px;
+}
+/* end game */
+
+/* start result */
+.result{
+    margin-top: 100px;
+    display: none;
+    transition: 0.8s;
+}
+.result .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+.result .container div{
+    text-align: center;
+}
+.result .container p{
+    color: white;
+    font-size: 13px;
+}
+.result .container .shape{
+    background-color: #fafafa;
+    border-radius: 50%;
+    padding: 40px;
+    transition: 0.3s;
+    margin-top: 35px;
+}
+.result .container .shape svg{
+    color: var(--main-color);
+    font-size: 120px;
+}
+.result .container .shape.hand{
+    border: solid #4caf50 45px;
+}
+.result .container .shape.back{
+    border: solid #f44336 45px;
+}
+.result .container .shape.sciss{
+    border: solid #ffc107 45px;
+}
+.result .container .play{
+    position: relative;
+    z-index: 6;
+    display: none;
+    opacity: 0;
+    transition: 0.3s;
+}
+.result .container .play p{
+    font-size: 45px;
+    margin: 0;
+    margin-bottom: 25px;
+}
+.result .container .play button{
+    cursor: pointer;
+    border-radius: 10px;
+    width: 240px;
+    padding: 15px;
+    text-transform: uppercase;
+    border-color: var(--main-color);
+    outline: none;
+    color: var(--main-color);
+    transition: 0.3s;
+}
+.result .container .play button:hover{
+    transform: scale(1.1);
+    color: #e91e63;
+}
+.result .container .pick{
+    background-color: var(--main-color);
+    border-radius: 50%;
+    width: 290px;
+    height: 290px;
+}
+.result .container .winner .shape{
+    box-shadow: #9e9e9e13 0 0 0px 50px, #9e9e9e0c 0 0 0 120px;
+}
+
+/* medium screen */
+@media (max-width:992px) {
+    .result .container .shape{
+        padding: 25px;
+        border-width: 20px !important;
+    }
+    .result .container .shape svg{
+        font-size: 90px;
+    }
+    .result .container .winner .shape{
+        box-shadow: #9e9e9e13 0 0 0px 35px, #9e9e9e0c 0 0 0 90px;
+    }
+    .result .container .pick{
+        width: 180px;
+        height: 180px;
+    }
+}
+/* very small screen */
+@media (max-width:767px) {
+    .result .container .shape{
+        padding: 15px;
+        border-width: 8px !important;
+    }
+    .result .container .shape svg{
+        font-size: 55px;
+    }
+    .result .container .winner .shape{
+        box-shadow: #9e9e9e13 0 0 0px 15px, #9e9e9e0c 0 0 0 60px;
+    }
+    .result .container .pick{
+        width: 101px;
+        height: 101px;
+    }
+    .result .container .play p{
+        font-size: 25px;
+    }
+    .result .container .play button{
+        width: 150px;
+    }
+}
+/* end result */
